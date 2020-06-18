@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "320392572732",
+    "firebase_url": "https://labtest2covid19.firebaseio.com",
+    "project_id": "labtest2covid19",
+    "storage_bucket": "labtest2covid19.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:320392572732:android:8af2a52cda4c0b4cebf839",
+        "android_client_info": {
+          "package_name": "ca.louisechan.labtest2covid19"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "320392572732-lnea7j8lha30k3rgms8qflva0euv0ss6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTY-3QKKwTNuSzmghRfjce82zrntBOwV4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "320392572732-lnea7j8lha30k3rgms8qflva0euv0ss6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

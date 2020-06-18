@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">LabTest2Covid19</string>
+    <string-array name="canadaprovter">
+        <item>Ontario</item>
+        <item>Quebec</item>
+        <item>Nova Scotia</item>
+        <item>New Brunswick</item>
+        <item>Manitoba</item>
+        <item>British Columbia</item>
+        <item>Prince Edward Island</item>
+        <item>Saskatchewan</item>
+        <item>Alberta</item>
+        <item>Newfoundland and Labrador</item>
+        <item>Northwest Territories</item>
+        <item>Yukon</item>
+        <item>Nunavut</item>
+    </string-array>
+</resources>
