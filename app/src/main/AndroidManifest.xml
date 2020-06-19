@@ -9,13 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".EditCaseActivity"></activity>
+        <activity android:name=".EditCaseActivity" android:noHistory="true"></activity>
         <activity android:name=".ViewCasesActivity" />
         <activity android:name=".AddCaseActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".RegularUserActivity" />
         <activity android:name=".ClerkActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity" android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -3,12 +3,15 @@ package ca.louisechan.labtest2covid19;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -19,11 +22,12 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 
 public class RegularUserActivity extends AppCompatActivity {
-
+    private static final String TAG = "RegularUserActivity";
     private ListView lvRegularUser;
     private ArrayList<Case> cases;
     private ArrayList<Case> casesBackup;
     private FirebaseFirestore db;
+    private boolean displayAllCases = true;
     Spinner spinProvince;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,16 +68,19 @@ public class RegularUserActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String provinceSelected = spinProvince.getSelectedItem().toString();
 
-                cases.clear();
+                if (displayAllCases == true) {
+                    displayAllCases = false;
+                } else {
+                    cases.clear();
 
-                for(int i = 0; i < casesBackup.size(); i++) {
-                    if (casesBackup.get(i).getProvince().equals(provinceSelected)) {
-                        cases.add(casesBackup.get(i));
+                    for (int i = 0; i < casesBackup.size(); i++) {
+                        if (casesBackup.get(i).getProvince().equals(provinceSelected)) {
+                            cases.add(casesBackup.get(i));
+                        }
                     }
+
+                    adapter.notifyDataSetChanged();
                 }
-
-                adapter.notifyDataSetChanged();
-
             }
 
             @Override
@@ -85,5 +92,18 @@ public class RegularUserActivity extends AppCompatActivity {
     }
 
 
+    public void logoutButtonPressed(View view) {
+        Intent i = new Intent(this, MainActivity.class);
+        startActivity(i);
+    }
 
+    @Override
+    public void onBackPressed() {
+        Log.d(TAG, "onBackPressed: BACK button clicks are disabled in this activity.");
+        // Exit to home screen on BACK button pressed.
+        Intent i = new Intent(Intent.ACTION_MAIN);
+        i.addCategory(Intent.CATEGORY_HOME);
+        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(i);
+    }
 }

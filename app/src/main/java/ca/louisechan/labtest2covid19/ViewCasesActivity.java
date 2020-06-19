@@ -56,7 +56,7 @@ public class ViewCasesActivity extends AppCompatActivity {
                         long totalCases = document.getLong("totalCases");
                         long totalRecovered = document.getLong("totalRecovered");
                         long totalDeaths = document.getLong("totalDeaths");
-                        Object provObj = document.getData().get("province");
+                        Object provObj = document.get("province");
                         String province = provObj == null ? "": provObj.toString();
 
                         // Add case to arraylist
